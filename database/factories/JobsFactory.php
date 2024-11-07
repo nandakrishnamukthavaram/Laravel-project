@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Employer;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Jobs>
@@ -21,6 +21,7 @@ class JobsFactory extends Factory
     {
         return [
             'title' => fake()->jobTitle(),
+            'employer_id' => Employer::factory(),
             'salary' => '123'
         ];
     }
